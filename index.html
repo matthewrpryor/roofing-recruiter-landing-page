@@ -10,100 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-* { font-family: 'Inter', sans-serif; }
-.gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1f2937 50%, #000000 100%); }
-.gradient-cta { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
-.gradient-cta:hover { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
-
-/* Mobile-specific improvements */
-/* Mobile-specific layout reordering */
-@media (max-width: 768px) {
-    /* Keep flex layout but fix the order */
-    .gradient-bg .grid {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    
-    /* Left content div (with headline) comes first */
-    .gradient-bg .grid > div:first-child {
-        order: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    
-    /* Headline stays first */
-    .gradient-bg .grid > div:first-child h1 {
-        order: 1 !important;
-        margin-bottom: 2rem !important;
-    }
-    
-    /* Video div comes second (after headline) */
-    .gradient-bg .grid > div:last-child {
-        order: 2 !important;
-        margin: 0 0 2rem 0 !important;
-    }
-    
-    /* "Our top performers" text comes third */
-    .gradient-bg .grid > div:first-child h2 {
-        order: 3 !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    /* "While everyone else" paragraph comes fourth */
-    .gradient-bg .grid > div:first-child p:first-of-type {
-        order: 4 !important;
-        margin-bottom: 2rem !important;
-    }
-    
-    /* CTA button */
-    .gradient-bg .grid > div:first-child button {
-        order: 5 !important;
-    }
-    
-    /* Disclaimer text */
-    .gradient-bg .grid > div:first-child p:last-of-type {
-        order: 6 !important;
-    }
-    
-    /* Make stats under video smaller and side by side */
-    .grid-cols-1.sm\\:grid-cols-3 {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.75rem !important;
-        margin-top: 1rem !important;
-    }
-    
-    .grid-cols-1.sm\\:grid-cols-3 > div {
-        padding: 0.75rem !important;
-    }
-    
-    .grid-cols-1.sm\\:grid-cols-3 > div > div:first-child {
-        font-size: 1.25rem !important;
-    }
-    
-    .grid-cols-1.sm\\:grid-cols-3 > div > div:last-child {
-        font-size: 0.625rem !important;
-    }
-}
-
-/* Tablet improvements */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .gradient-bg {
-        padding: 2.5rem 2rem !important;
-    }
-    
-    .bg-gradient-to-b {
-        padding: 4rem 2rem !important;
-    }
-    
-    .bg-gray-800 {
-        padding: 3rem 2rem !important;
-    }
-    
-    .bg-gradient-to-r {
-        padding: 4rem 2rem !important;
-    }
-}
-</style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1f2937 50%, #000000 100%); }
+        .gradient-cta { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .gradient-cta:hover { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
+    </style>
 </head>
 <body class="bg-gray-900 text-white">
 
@@ -130,85 +41,147 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="gradient-bg min-h-screen flex items-center pt-0 py-12 sm:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <!-- Left Side - Headlines & CTA -->
-            <div class="space-y-6 sm:space-y-8 text-center lg:text-left">
+<!-- Hero Section -->
+<div class="gradient-bg min-h-screen flex items-center pt-0 py-12 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- Mobile Layout (shows on mobile only) -->
+        <div class="lg:hidden space-y-8 text-center">
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl font-black leading-tight">
+                Think Door Knocking Is
+                <span class="text-orange-400 block">DEAD?</span>
+            </h1>
+            
+            <!-- Video -->
+            <div class="relative group cursor-pointer" onclick="playVideo()">
+                <div class="relative bg-gray-800 rounded-xl overflow-hidden aspect-video shadow-xl transition-all duration-300 group-hover:scale-105">
+                    <!-- Video content here (same as your existing video) -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-full scale-150"></div>
+                            <div class="relative bg-white/90 hover:bg-white rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xl">
+                                <div class="w-0 h-0 border-l-[12px] border-l-gray-800 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h3 class="text-base font-bold mb-1">How Michael Went From $0 to $28K/Month</h3>
+                        <p class="text-gray-300 text-xs">3:47 minute case study</p>
+                    </div>
+                </div>
                 
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-tight">
+                <!-- Compact Stats -->
+                <div class="grid grid-cols-3 gap-2 mt-4">
+                    <div class="text-center bg-gray-800/50 p-2 rounded">
+                        <div class="text-lg font-bold text-orange-400">$180K+</div>
+                        <div class="text-xs text-gray-400">Year 1</div>
+                    </div>
+                    <div class="text-center bg-gray-800/50 p-2 rounded">
+                        <div class="text-lg font-bold text-orange-400">50 States</div>
+                        <div class="text-xs text-gray-400">Available</div>
+                    </div>
+                    <div class="text-center bg-gray-800/50 p-2 rounded">
+                        <div class="text-lg font-bold text-orange-400">Training</div>
+                        <div class="text-xs text-gray-400">Included</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Our Top Performers -->
+            <h2 class="text-xl font-bold text-gray-300">
+                Our Top Performers Make <span class="text-green-400">$25K+/Month</span>
+            </h2>
+            
+            <!-- Description -->
+            <p class="text-base text-gray-300 leading-relaxed max-w-lg mx-auto">
+                While everyone else is scared to knock doors, our trained professionals are earning multiple six-figures working with America's top roofing companies.
+            </p>
+
+            <!-- CTA Button -->
+            <button
+                onclick="scrollToForm()"
+                class="gradient-cta text-white font-black py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 hover:shadow-2xl w-full"
+            >
+                🎯 RESERVE MY SPOT NOW
+            </button>
+            
+            <p class="text-xs text-gray-400">
+                ✓ 100% Free Training ✓ No Credit Card Required ✓ Limited Spots
+            </p>
+        </div>
+
+        <!-- Desktop Layout (shows on desktop only) -->
+        <div class="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Your existing desktop layout stays exactly the same -->
+            <!-- Left Side - Headlines & CTA -->
+            <div class="space-y-8 text-left">
+                <h1 class="text-7xl font-black leading-tight">
                     Think Door Knocking Is
                     <span class="text-orange-400 block">DEAD?</span>
                 </h1>
                 
-                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-gray-300">
+                <h2 class="text-4xl font-bold text-gray-300">
                     Our Top Performers Make <span class="text-green-400">$25K+/Month</span>
                 </h2>
                 
-                <p class="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                <p class="text-xl text-gray-300 leading-relaxed max-w-lg">
                     While everyone else is scared to knock doors, our trained professionals are earning multiple six-figures working with America's top roofing companies.
                 </p>
 
-                <!-- Main CTA Button -->
                 <button
                     onclick="scrollToForm()"
-                    class="gradient-cta text-white font-black py-4 sm:py-6 px-8 sm:px-12 rounded-lg text-lg sm:text-2xl transition-all transform hover:scale-105 hover:shadow-2xl w-full sm:w-auto"
+                    class="gradient-cta text-white font-black py-6 px-12 rounded-lg text-2xl transition-all transform hover:scale-105 hover:shadow-2xl"
                 >
                     🎯 RESERVE MY SPOT NOW
                 </button>
                 
-                <p class="text-xs sm:text-sm text-gray-400">
+                <p class="text-sm text-gray-400">
                     ✓ 100% Free Training ✓ No Credit Card Required ✓ Limited Spots
                 </p>
             </div>
 
-            <!-- Right Side - Video -->
-            <div class="mt-8 lg:mt-0">
+            <!-- Right Side - Video (desktop) -->
+            <div>
+                <!-- Your existing video code -->
                 <div class="relative group cursor-pointer" onclick="playVideo()">
-                    <div class="relative bg-gray-800 rounded-xl lg:rounded-2xl overflow-hidden aspect-video shadow-xl lg:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                        <!-- Video Thumbnail -->
+                    <div class="relative bg-gray-800 rounded-2xl overflow-hidden aspect-video shadow-2xl transition-all duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
-                        
-                      <!-- Play Button -->
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="relative">
-                                <!-- Backdrop blur -->
                                 <div class="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-full scale-150"></div>
-                                <!-- Main button -->
-                                <div class="relative bg-white/90 hover:bg-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xl">
-                                    <!-- Triangle play icon -->
-                                    <div class="w-0 h-0 border-l-[12px] sm:border-l-[16px] border-l-gray-800 border-t-[8px] sm:border-t-[10px] border-t-transparent border-b-[8px] sm:border-b-[10px] border-b-transparent ml-1"></div>
+                                <div class="relative bg-white/90 hover:bg-white rounded-full w-20 h-20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xl">
+                                    <div class="w-0 h-0 border-l-[16px] border-l-gray-800 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Video Info -->
-                        <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black to-transparent">
-                            <h3 class="text-base sm:text-xl font-bold mb-1 sm:mb-2">How Michael Went From $0 to $28K/Month</h3>
-                            <p class="text-gray-300 text-xs sm:text-sm">3:47 minute case study</p>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
+                            <h3 class="text-xl font-bold mb-2">How Michael Went From $0 to $28K/Month</h3>
+                            <p class="text-gray-300 text-sm">3:47 minute case study</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Key Stats under video -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
-    <div class="text-center">
-        <div class="text-2xl sm:text-3xl font-bold text-orange-400">$180K+</div>
-        <div class="text-xs sm:text-sm text-gray-400">Year 1 Potential</div>
-    </div>
-    <div class="text-center">
-        <div class="text-2xl sm:text-3xl font-bold text-orange-400">50 States</div>
-        <div class="text-xs sm:text-sm text-gray-400">Available</div>
-    </div>
-    <div class="text-center">
-        <div class="text-2xl sm:text-3xl font-bold text-orange-400">Full Training</div>
-        <div class="text-xs sm:text-sm text-gray-400">Included</div>
-    </div>
-</div>
+                <!-- Desktop Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">$180K+</div>
+                        <div class="text-sm text-gray-400">Year 1 Potential</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">50 States</div>
+                        <div class="text-sm text-gray-400">Available</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">Full Training</div>
+                        <div class="text-sm text-gray-400">Included</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+</div>
 <!-- Social Proof Section -->
     <div class="bg-gradient-to-b from-orange-600 to-gray-900 py-12 sm:py-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
