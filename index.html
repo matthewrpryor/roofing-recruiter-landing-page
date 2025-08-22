@@ -440,7 +440,7 @@
                         </label>
                     </div>
                     <button
-                        onclick="submitForm(event)"
+                        onclick="submitForm(this)"
                         class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all transform hover:scale-105"
                     >
                         🚀 CLAIM MY SPOT NOW
@@ -522,15 +522,12 @@
 }
 
       // Form submission
-async function submitForm(event) {
+async function submitForm(buttonElement) {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const zipcode = document.getElementById('zipcode').value;
     const consent = document.getElementById('consent').checked;
-    
-    // Use the button that was clicked instead of searching for ID
-    const submitBtn = event.target;
     
     console.log('Form submitted with:', { name, email, phone, zipcode, consent });
     
@@ -545,9 +542,9 @@ async function submitForm(event) {
     }
     
     // Show loading state
-    submitBtn.innerHTML = 'Submitting...';
-    submitBtn.disabled = true;
-    submitBtn.className = 'w-full bg-gray-500 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
+    buttonElement.innerHTML = 'Submitting...';
+    buttonElement.disabled = true;
+    buttonElement.className = 'w-full bg-gray-500 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
     
     // Send to GHL webhook
     try {
@@ -567,17 +564,17 @@ async function submitForm(event) {
         });
         
         if (response.ok) {
-            submitBtn.innerHTML = '✅ Submitted!';
-            submitBtn.className = 'w-full bg-green-600 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
+            buttonElement.innerHTML = '✅ Submitted!';
+            buttonElement.className = 'w-full bg-green-600 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
             alert("We're excited to see you on the call! Check your email for details on how to join.");
         } else {
-            submitBtn.innerHTML = '❌ Error - Try Again';
-            submitBtn.disabled = false;
+            buttonElement.innerHTML = '❌ Error - Try Again';
+            buttonElement.disabled = false;
         }
     } catch (error) {
         console.error('Error:', error);
-        submitBtn.innerHTML = '❌ Error - Try Again';
-        submitBtn.disabled = false;
+        buttonElement.innerHTML = '❌ Error - Try Again';
+        buttonElement.disabled = false;
     }
 }
 
