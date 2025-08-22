@@ -10,11 +10,149 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1f2937 50%, #000000 100%); }
-        .gradient-cta { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
-        .gradient-cta:hover { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
-    </style>
+* { font-family: 'Inter', sans-serif; }
+.gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1f2937 50%, #000000 100%); }
+.gradient-cta { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+.gradient-cta:hover { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+    /* More breathing room in countdown banner */
+    .bg-black\/40 {
+        padding: 1rem 1.5rem !important;
+    }
+    
+    /* Larger text and more space in countdown */
+    .bg-black\/40 p {
+        font-size: 0.875rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .bg-red-600 {
+        padding: 0.75rem 1rem !important;
+        margin: 0 0.25rem !important;
+    }
+    
+    /* Hero section mobile improvements */
+    .gradient-bg {
+        padding: 2rem 1.5rem 3rem 1.5rem !important;
+    }
+    
+    .gradient-bg .space-y-6 {
+        gap: 2rem !important;
+    }
+    
+    /* Larger mobile text */
+    .gradient-bg h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .gradient-bg h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .gradient-bg p {
+        font-size: 1.125rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Bigger CTA button on mobile */
+    .gradient-cta {
+        padding: 1.25rem 2rem !important;
+        font-size: 1.25rem !important;
+        margin: 1.5rem 0 !important;
+    }
+    
+    /* Video section mobile spacing */
+    .aspect-video {
+        margin: 2rem 0 !important;
+    }
+    
+    /* Stats under video - more space */
+    .grid-cols-1 {
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    /* Testimonials mobile improvements */
+    .bg-gradient-to-b {
+        padding: 3rem 1.5rem !important;
+    }
+    
+    .space-y-12 {
+        gap: 3rem !important;
+    }
+    
+    /* Calculator section mobile */
+    .bg-gray-800 {
+        padding: 2rem 1.5rem !important;
+        margin: 1rem !important;
+    }
+    
+    /* Calculator text improvements */
+    #annual-earnings {
+        font-size: 3rem !important;
+    }
+    
+    #monthly-earnings {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Form section mobile improvements */
+    .bg-gradient-to-r {
+        padding: 3rem 1.5rem !important;
+    }
+    
+    .bg-white {
+        padding: 2rem 1.5rem !important;
+        margin: 0 1rem !important;
+    }
+    
+    /* Form inputs bigger touch targets */
+    .bg-white input {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Checkbox area more space */
+    .flex.items-start {
+        margin: 1.5rem 0 !important;
+    }
+    
+    .flex.items-start label {
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Footer mobile spacing */
+    .bg-black {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+/* Tablet improvements */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .gradient-bg {
+        padding: 2.5rem 2rem !important;
+    }
+    
+    .bg-gradient-to-b {
+        padding: 4rem 2rem !important;
+    }
+    
+    .bg-gray-800 {
+        padding: 3rem 2rem !important;
+    }
+    
+    .bg-gradient-to-r {
+        padding: 4rem 2rem !important;
+    }
+}
+</style>
 </head>
 <body class="bg-gray-900 text-white">
 
