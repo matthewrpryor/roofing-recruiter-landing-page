@@ -270,124 +270,233 @@
         </div>
     </div>
 
-    <!-- Levels of Success (progress display, not selectable tiers) -->
+    <!-- Earnings Calculator Section -->
 <section class="max-w-6xl mx-auto px-6 pt-0 pb-12">
-<!-- Earnings Progression Section -->
     <div class="bg-gray-900 py-12 sm:py-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Your Earning Journey</h2>
-                <p class="text-lg sm:text-xl text-gray-300">Here's the typical progression path for our successful door knockers</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">How Much Can I Make?</h2>
+                <p class="text-lg sm:text-xl text-gray-300">Move the slider to see your earning potential</p>
             </div>
 
-            <!-- Timeline Path -->
-            <div class="relative">
-                <!-- Connecting Line -->
-                <div class="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-orange-400 to-green-400 mx-16"></div>
+            <!-- Calculator Container -->
+            <div class="bg-gray-800 p-8 sm:p-12 rounded-2xl border-2 border-orange-400/30 shadow-2xl">
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative">
-                    <!-- Step 1: Learning Phase -->
-                    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-2 border-blue-400 text-center relative">
-                        <!-- Step Number -->
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-400 text-black rounded-full flex items-center justify-center font-bold text-lg">1</div>
-                        
-                        <div class="mb-4 sm:mb-6 mt-4">
-                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Learning Phase</h3>
-                            <div class="text-xs sm:text-sm text-blue-400 font-semibold">MONTHS 1-3</div>
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <div class="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">$8,500</div>
-                            <div class="text-gray-400 text-sm sm:text-base">Average Monthly</div>
-                        </div>
-                        
-                        <!-- Lead Requirements -->
-                        <div class="mb-4 sm:mb-6 bg-blue-900/30 p-3 rounded-lg border border-blue-400/30">
-                            <div class="text-blue-300 text-sm font-semibold">Lead Activity Required:</div>
-                            <div class="text-white text-lg font-bold">25-35 leads/month</div>
-                            <div class="text-blue-200 text-xs">~8-12 leads per week</div>
-                        </div>
-                        
-                        <ul class="text-left space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
-                            <li class="flex items-center"><span class="text-blue-400 mr-2">→</span>Master the scripts</li>
-                            <li class="flex items-center"><span class="text-blue-400 mr-2">→</span>Build confidence</li>
-                            <li class="flex items-center"><span class="text-blue-400 mr-2">→</span>Get placed with company</li>
-                            <li class="flex items-center"><span class="text-blue-400 mr-2">→</span>Close 2-4 deals/month</li>
-                        </ul>
-                    </div>
-
-                    <!-- Step 2: Growing Phase -->
-                    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-2 border-orange-400 text-center relative">
-                        <!-- Step Number -->
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-orange-400 text-black rounded-full flex items-center justify-center font-bold text-lg">2</div>
-                        
-                        <div class="mb-4 sm:mb-6 mt-4">
-                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Growing Phase</h3>
-                            <div class="text-xs sm:text-sm text-orange-400 font-semibold">MONTHS 4-8</div>
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <div class="text-3xl sm:text-4xl font-bold text-orange-400 mb-2">$15,200</div>
-                            <div class="text-gray-400 text-sm sm:text-base">Average Monthly</div>
-                        </div>
-                        
-                        <!-- Lead Requirements -->
-                        <div class="mb-4 sm:mb-6 bg-orange-900/30 p-3 rounded-lg border border-orange-400/30">
-                            <div class="text-orange-300 text-sm font-semibold">Lead Activity Required:</div>
-                            <div class="text-white text-lg font-bold">45-55 leads/month</div>
-                            <div class="text-orange-200 text-xs">~11-14 leads per week</div>
-                        </div>
-                        
-                        <ul class="text-left space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
-                            <li class="flex items-center"><span class="text-orange-400 mr-2">→</span>Systems become natural</li>
-                            <li class="flex items-center"><span class="text-orange-400 mr-2">→</span>Higher conversion rates</li>
-                            <li class="flex items-center"><span class="text-orange-400 mr-2">→</span>Better territories</li>
-                            <li class="flex items-center"><span class="text-orange-400 mr-2">→</span>Close 6-8 deals/month</li>
-                        </ul>
-                    </div>
-
-                    <!-- Step 3: Mastery Phase -->
-                    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-2 border-green-400 text-center relative">
-                        <!-- Step Number -->
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-400 text-black rounded-full flex items-center justify-center font-bold text-lg">3</div>
-                        
-                        <div class="mb-4 sm:mb-6 mt-4">
-                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Mastery Phase</h3>
-                            <div class="text-xs sm:text-sm text-green-400 font-semibold">MONTHS 9-12</div>
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <div class="text-3xl sm:text-4xl font-bold text-green-400 mb-2">$24,800</div>
-                            <div class="text-gray-400 text-sm sm:text-base">Average Monthly</div>
-                        </div>
-                        
-                        <!-- Lead Requirements -->
-                        <div class="mb-4 sm:mb-6 bg-green-900/30 p-3 rounded-lg border border-green-400/30">
-                            <div class="text-green-300 text-sm font-semibold">Lead Activity Required:</div>
-                            <div class="text-white text-lg font-bold">65-75 leads/month</div>
-                            <div class="text-green-200 text-xs">~16-19 leads per week</div>
-                        </div>
-                        
-                        <ul class="text-left space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
-                            <li class="flex items-center"><span class="text-green-400 mr-2">→</span>Top performer status</li>
-                            <li class="flex items-center"><span class="text-green-400 mr-2">→</span>Premium commissions</li>
-                            <li class="flex items-center"><span class="text-green-400 mr-2">→</span>Prime territories</li>
-                            <li class="flex items-center"><span class="text-green-400 mr-2">→</span>Close 10+ deals/month</li>
-                        </ul>
+                <!-- Slider Section -->
+                <div class="mb-8">
+                    <label class="block text-lg font-semibold text-white mb-4 text-center">
+                        Deals closed per month: <span id="deals-value" class="text-orange-400 font-bold">3</span>
+                    </label>
+                    <input 
+                        type="range" 
+                        id="deals-slider" 
+                        min="0" 
+                        max="20" 
+                        value="3" 
+                        class="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                    />
+                    <div class="flex justify-between text-sm text-gray-400 mt-2">
+                        <span>0</span>
+                        <span>20+</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Journey Result -->
-            <div class="text-center mt-8 sm:mt-12">
-                <div class="inline-block bg-gradient-to-r from-blue-400 via-orange-400 to-green-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold">
-                    <div class="text-xs sm:text-sm font-semibold mb-1">Complete the Journey → Earn</div>
-                    <div class="text-2xl sm:text-3xl font-bold">$180K - $300K+ Year 1</div>
+                <!-- Results Display -->
+                <div class="text-center space-y-6">
+                    <!-- Level Badge -->
+                    <div id="level-badge" class="inline-block px-6 py-3 rounded-full text-black font-bold text-lg">
+                        <!-- Dynamic content -->
+                    </div>
+
+                    <!-- Earnings Display -->
+                    <div class="text-center">
+                        <div class="text-gray-400 text-sm mb-2">Annual Earnings</div>
+                        <div id="annual-earnings" class="text-5xl sm:text-6xl font-black text-green-400 mb-2">$79,200</div>
+                        <div class="text-gray-400 text-xs mb-1">Monthly Earnings</div>
+                        <div id="monthly-earnings" class="text-2xl sm:text-3xl font-bold text-gray-300">$6,600</div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="mt-8">
+                        <button
+                            onclick="scrollToForm()"
+                            id="calculator-cta"
+                            class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all transform hover:scale-105"
+                        >
+                            🚀 Register to Start Earning
+                        </button>
+                    </div>
+
+                    <!-- Level Description -->
+                    <div id="level-description" class="mt-8 p-4 rounded-lg text-center">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Calculator Note -->
+                <div class="mt-8 p-4 bg-blue-900/30 rounded-lg border border-blue-400/30 text-center">
+                    <p class="text-blue-200 text-sm">
+                        <strong>Calculation:</strong> Based on 10% commission per $22,000 average roof project
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+/* Custom slider styling */
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #3b82f6 0%, #f97316 50%, #10b981 80%, #a855f7 100%);
+    outline: none;
+    border-radius: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 3px solid #f97316;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 3px solid #f97316;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Glowing button animation */
+.glow-button {
+    animation: glow-pulse 2s infinite;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+@keyframes glow-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
+        transform: scale(1.02);
+    }
+}
+
+.mega-glow-button {
+    animation: mega-glow 1.5s infinite;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+}
+
+@keyframes mega-glow {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 50px rgba(168, 85, 247, 1), 0 0 70px rgba(168, 85, 247, 0.6);
+        transform: scale(1.05);
+    }
+}
+</style>
+
+<script>
+function updateCalculator() {
+    const slider = document.getElementById('deals-slider');
+    const dealsValue = document.getElementById('deals-value');
+    const levelBadge = document.getElementById('level-badge');
+    const monthlyEarnings = document.getElementById('monthly-earnings');
+    const annualEarnings = document.getElementById('annual-earnings');
+    const levelDescription = document.getElementById('level-description');
+    const ctaButton = document.getElementById('calculator-cta');
+    
+    const deals = parseInt(slider.value);
+    const commissionPerDeal = 2200; // 10% of $22,000
+    
+    // Calculate earnings
+    const monthly = deals * commissionPerDeal;
+    const annual = monthly * 12;
+    
+    // Update deals display
+    dealsValue.textContent = deals;
+    
+    // Update earnings display
+    monthlyEarnings.textContent = '$' + monthly.toLocaleString();
+    annualEarnings.textContent = '$' + annual.toLocaleString();
+    
+    // Determine level and styling
+    let level, badgeClass, descriptionHTML, buttonClass;
+    
+    if (deals <= 4) {
+        level = 'Rookie';
+        badgeClass = 'bg-blue-400';
+        buttonClass = 'bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all transform hover:scale-105';
+        descriptionHTML = `
+            <div class="bg-blue-900/30 border border-blue-400/30 rounded-lg p-4">
+                <h4 class="text-blue-300 font-bold mb-2">🌱 Getting Started</h4>
+                <p class="text-blue-200 text-sm">Perfect starting point! Most beginners hit 2-4 deals per month while learning our proven system.</p>
+            </div>
+        `;
+    } else if (deals <= 8) {
+        level = 'Crusher';
+        badgeClass = 'bg-orange-400';
+        buttonClass = 'bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all transform hover:scale-105';
+        descriptionHTML = `
+            <div class="bg-orange-900/30 border border-orange-400/30 rounded-lg p-4">
+                <h4 class="text-orange-300 font-bold mb-2">🔥 Hitting Your Stride</h4>
+                <p class="text-orange-200 text-sm">Now you're cooking! This is where our training really pays off and you start seeing serious money.</p>
+            </div>
+        `;
+    } else if (deals <= 14) {
+        level = 'Elite Earner';
+        badgeClass = 'bg-green-400';
+        buttonClass = 'bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all transform hover:scale-105 glow-button';
+        descriptionHTML = `
+            <div class="bg-green-900/30 border border-green-400/30 rounded-lg p-4">
+                <h4 class="text-green-300 font-bold mb-2">👑 Top 1% Territory</h4>
+                <p class="text-green-200 text-sm">After going through our D2D training and getting placed with one of the top roofing companies in the nation - this is where you can be 😎</p>
+            </div>
+        `;
+    } else {
+        level = 'Door Knocking Legend';
+        badgeClass = 'bg-purple-400';
+        buttonClass = 'bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all transform hover:scale-105 mega-glow-button';
+        descriptionHTML = `
+            <div class="bg-purple-900/30 border border-purple-400/30 rounded-lg p-4">
+                <h4 class="text-purple-300 font-bold mb-2">🦄 Mythical Status</h4>
+                <p class="text-purple-200 text-sm">At this point you're basically printing money. Neighbors probably think you discovered buried treasure in their yards. You're not just knocking doors - you're knocking down financial barriers! 💎🚀</p>
+            </div>
+        `;
+    }
+    
+    // Update level badge
+    levelBadge.textContent = level;
+    levelBadge.className = `inline-block px-6 py-3 rounded-full text-black font-bold text-lg ${badgeClass}`;
+    
+    // Update button styling
+    ctaButton.className = buttonClass;
+    
+    // Update description
+    levelDescription.innerHTML = descriptionHTML;
+}
+
+// Initialize calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('deals-slider');
+    slider.addEventListener('input', updateCalculator);
+    updateCalculator(); // Initial calculation
+});
+</script>
 
     <!-- Registration Form Section -->
     <div id="registration-form" class="bg-gradient-to-r from-orange-600 to-red-600 py-12 sm:py-20">
