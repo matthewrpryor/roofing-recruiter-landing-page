@@ -1,0 +1,725 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Countdown Banner */
+#countdown-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+    animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3); }
+    50% { box-shadow: 0 8px 30px rgba(220, 38, 38, 0.6); }
+}
+
+#countdown-banner p {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#countdown-banner > div {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#countdown-banner > div > div {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    padding: 15px 20px;
+    border-radius: 12px;
+    min-width: 80px;
+    border: 2px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+#countdown-banner > div > div:hover {
+    transform: scale(1.05);
+    border-color: rgba(255,255,255,0.3);
+}
+
+#countdown-banner > div > div > div:first-child {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff6b35;
+}
+
+#countdown-banner > div > div > div:last-child {
+    font-size: 11px;
+    font-weight: 600;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #1f2937 75%, #000000 100%);
+    color: white;
+    padding: 0px 40px 100px 40px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+#hero > div {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left side - Headlines and CTA */
+#hero > div > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+#hero > div > div:first-child > div:first-child {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    animation: float 3s ease-in-out infinite;
+    align-self: flex-start;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+#hero h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#hero h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    animation: pulse-color 2s ease-in-out infinite;
+}
+
+@keyframes pulse-color {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+#hero > div > div:first-child > p {
+    font-size: 1.4rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    max-width: 580px;
+    font-weight: 400;
+}
+
+/* Main CTA Button */
+#hero button {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 800;
+    padding: 24px 48px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 12px 35px rgba(249, 115, 22, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+#hero button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+#hero button:hover:before {
+    left: 100%;
+}
+
+#hero button:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(249, 115, 22, 0.6);
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #b91c1c 100%);
+}
+
+#hero button:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+#hero > div > div:first-child > p:last-of-type {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-top: -15px;
+}
+
+/* Stats under CTA */
+#hero > div > div:first-child > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#hero > div > div:first-child > div:last-child > div {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+#hero > div > div:first-child > div:last-child > div:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+#hero > div > div:first-child > div:last-child > div > div:first-child {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #f97316;
+    margin-bottom: 8px;
+}
+
+#hero > div > div:first-child > div:last-child > div > div:last-child {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Right side - Video */
+#hero > div > div:last-child {
+    position: relative;
+}
+
+#hero > div > div:last-child > div:first-child {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #111827 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#hero > div > div:last-child > div:first-child:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 35px 80px rgba(0,0,0,0.6);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+#hero > div > div:last-child > div:first-child > div:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    font-size: 2.5rem;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.4);
+    animation: pulse-play 2s ease-in-out infinite;
+}
+
+@keyframes pulse-play {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+#hero > div > div:last-child > div:first-child:hover > div:first-child {
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.6);
+}
+
+#hero > div > div:last-child > div:first-child > h3 {
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+    right: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero > div > div:last-child > div:first-child > p {
+    position: absolute;
+    left: 30px;
+    color: #cbd5e1;
+    margin: 0;
+    font-weight: 500;
+}
+
+#hero > div > div:last-child > div:first-child > p:nth-child(4) {
+    bottom: 50px;
+    font-size: 1rem;
+}
+
+#hero > div > div:last-child > div:first-child > p:last-child {
+    bottom: 25px;
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* Video stats */
+#hero > div > div:last-child > div:last-child {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+#hero > div > div:last-child > div:last-child span:hover {
+    color: #f97316;
+    transition: color 0.3s ease;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    color: white;
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+}
+
+#testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+#testimonials h2 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+#testimonials > p {
+    font-size: 1.4rem;
+    color: #cbd5e1;
+    margin-bottom: 80px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+#testimonials > div {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+#testimonials > div > div {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: #1f2937;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials > div > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+#testimonials > div > div:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+}
+
+/* Testimonial header */
+#testimonials > div > div > div:first-child {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#testimonials > div > div > div:first-child > div:first-child {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-right: 20px;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+#testimonials > div > div > div:first-child > div:last-child > div:first-child {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+#testimonials > div > div > div:first-child > div:last-child > div:last-child {
+    color: #6b7280;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Earnings display */
+#testimonials > div > div > div:nth-child(2) {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+}
+
+#testimonials > div > div > div:nth-child(2) > div:first-child {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #10b981;
+    margin-bottom: 5px;
+}
+
+#testimonials > div > div > div:nth-child(2) > div:last-child {
+    color: #065f46;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Quote */
+#testimonials > div > div > p {
+    font-style: italic;
+    color: #4b5563;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+#testimonials > div > div > p::before {
+    content: '"';
+    font-size: 4rem;
+    color: #f97316;
+    position: absolute;
+    left: -15px;
+    top: -20px;
+    font-family: serif;
+}
+
+/* Stars */
+#testimonials > div > div > div:last-child {
+    color: #fbbf24;
+    font-size: 1.3rem;
+    filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+/* Registration Form */
+#registration-form {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #b91c1c 100%);
+    color: white;
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#registration-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#registration-form h2 {
+    font-size: 4.2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+#registration-form > p {
+    font-size: 1.4rem;
+    margin-bottom: 80px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+#registration-form > div {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: #1f2937;
+    padding: 50px;
+    border-radius: 24px;
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+#registration-form > div h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #1f2937;
+}
+
+#registration-form > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#registration-form input {
+    padding: 18px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+#registration-form input:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+    transform: translateY(-2px);
+}
+
+#registration-form button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+#registration-form button:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+}
+
+#registration-form > div > p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Footer */
+body > div:last-child {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #9ca3af;
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+body > div:last-child p:first-child {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+body > div:last-child p:last-child {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #hero > div {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    #hero h1 {
+        font-size: 4rem;
+    }
+    
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    #testimonials > div {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        padding: 60px 20px;
+    }
+    
+    #hero h1 {
+        font-size: 3rem;
+    }
+    
+    #hero h2 {
+        font-size: 2rem;
+    }
+    
+    #hero button {
+        font-size: 1.3rem;
+        padding: 20px 36px;
+    }
+    
+    #testimonials {
+        padding: 80px 20px;
+    }
+    
+    #registration-form {
+        padding: 80px 20px;
+    }
+    
+    #registration-form h2 {
+        font-size: 3rem;
+    }
+    
+    #countdown-banner > div {
+        gap: 15px;
+    }
+    
+    #countdown-banner > div > div {
+        padding: 12px 16px;
+        min-width: 70px;
+    }
+}
