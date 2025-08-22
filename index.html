@@ -16,173 +16,72 @@
 .gradient-cta:hover { background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); }
 
 /* Mobile-specific improvements */
+/* Mobile-specific layout reordering */
 @media (max-width: 768px) {
-    /* More breathing room in countdown banner */
-    .bg-black\/40 {
-        padding: 1rem 1.5rem !important;
-    }
-    
-    /* Larger text and more space in countdown */
-    .bg-black\/40 p {
-        font-size: 0.875rem !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    .bg-red-600 {
-        padding: 0.75rem 1rem !important;
-        margin: 0 0.25rem !important;
-    }
-    
-    /* Hero section mobile improvements */
-    .gradient-bg {
-        padding: 2rem 1.5rem 3rem 1.5rem !important;
-    }
-    
-    .gradient-bg .space-y-6 {
-        gap: 2rem !important;
-    }
-    
-    /* Larger mobile text */
-    .gradient-bg h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.1 !important;
-        margin-bottom: 1.5rem !important;
-    }
-    
-    .gradient-bg h2 {
-        font-size: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
-    }
-    
-    .gradient-bg p {
-        font-size: 1.125rem !important;
-        margin-bottom: 2rem !important;
-    }
-    
-    /* Bigger CTA button on mobile */
-    .gradient-cta {
-        padding: 1.25rem 2rem !important;
-        font-size: 1.25rem !important;
-        margin: 1.5rem 0 !important;
-    }
-    
-    /* Video section mobile spacing */
-    .aspect-video {
-        margin: 2rem 0 !important;
-    }
-    
-    /* Stats under video - more space */
-    .grid-cols-1 {
-        gap: 1.5rem !important;
-        margin-top: 2rem !important;
-    }
-    
-    /* Testimonials mobile improvements */
-    .bg-gradient-to-b {
-        padding: 3rem 1.5rem !important;
-    }
-    
-    .space-y-12 {
-        gap: 3rem !important;
-    }
-    
-    /* Calculator section mobile */
-    .bg-gray-800 {
-        padding: 2rem 1.5rem !important;
-        margin: 1rem !important;
-    }
-    
-    /* Calculator text improvements */
-    #annual-earnings {
-        font-size: 3rem !important;
-    }
-    
-    #monthly-earnings {
-        font-size: 1.5rem !important;
-    }
-    
-    /* Form section mobile improvements */
-    .bg-gradient-to-r {
-        padding: 3rem 1.5rem !important;
-    }
-    
-    .bg-white {
-        padding: 2rem 1.5rem !important;
-        margin: 0 1rem !important;
-    }
-    
-    /* Form inputs bigger touch targets */
-    .bg-white input {
-        padding: 1rem !important;
-        font-size: 1rem !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    /* Checkbox area more space */
-    .flex.items-start {
-        margin: 1.5rem 0 !important;
-    }
-    
-    .flex.items-start label {
-        font-size: 0.875rem !important;
-        line-height: 1.5 !important;
-    }
-    
-    /* Footer mobile spacing */
-    .bg-black {
-        padding: 2rem 1.5rem !important;
-    }
-    
-    /* Reorder hero content on mobile */
+    /* Keep flex layout but fix the order */
     .gradient-bg .grid {
         display: flex !important;
         flex-direction: column !important;
     }
     
-    /* Video comes first after headline */
-    .gradient-bg .grid > div:last-child {
+    /* Left content div (with headline) comes first */
+    .gradient-bg .grid > div:first-child {
         order: 1 !important;
-        margin-top: 0 !important;
-        margin-bottom: 2rem !important;
-    }
-    
-    /* Text content comes after video */
-    .gradient-bg .grid > div:first-child {
-        order: 2 !important;
-    }
-    
-    /* Reorder elements within the text content */
-    .gradient-bg .grid > div:first-child {
         display: flex !important;
         flex-direction: column !important;
     }
     
-    /* Headline first */
+    /* Headline stays first */
     .gradient-bg .grid > div:first-child h1 {
         order: 1 !important;
         margin-bottom: 2rem !important;
     }
     
-    /* "Our top performers" text after video (which is above) */
-    .gradient-bg .grid > div:first-child h2 {
+    /* Video div comes second (after headline) */
+    .gradient-bg .grid > div:last-child {
         order: 2 !important;
+        margin: 0 0 2rem 0 !important;
+    }
+    
+    /* "Our top performers" text comes third */
+    .gradient-bg .grid > div:first-child h2 {
+        order: 3 !important;
         margin-bottom: 1rem !important;
     }
     
-    /* "While everyone else" paragraph */
+    /* "While everyone else" paragraph comes fourth */
     .gradient-bg .grid > div:first-child p:first-of-type {
-        order: 3 !important;
+        order: 4 !important;
         margin-bottom: 2rem !important;
     }
     
     /* CTA button */
     .gradient-bg .grid > div:first-child button {
-        order: 4 !important;
+        order: 5 !important;
     }
     
     /* Disclaimer text */
     .gradient-bg .grid > div:first-child p:last-of-type {
-        order: 5 !important;
+        order: 6 !important;
+    }
+    
+    /* Make stats under video smaller and side by side */
+    .grid-cols-1.sm\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.75rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .grid-cols-1.sm\\:grid-cols-3 > div {
+        padding: 0.75rem !important;
+    }
+    
+    .grid-cols-1.sm\\:grid-cols-3 > div > div:first-child {
+        font-size: 1.25rem !important;
+    }
+    
+    .grid-cols-1.sm\\:grid-cols-3 > div > div:last-child {
+        font-size: 0.625rem !important;
     }
 }
 
