@@ -522,6 +522,7 @@
 }
 
       // Form submission
+// Form submission
 async function submitForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -529,6 +530,8 @@ async function submitForm() {
     const zipcode = document.getElementById('zipcode').value;
     const consent = document.getElementById('consent').checked;
     const submitBtn = document.getElementById('submit-btn');
+    
+    console.log('Form submitted with:', { name, email, phone, zipcode, consent });
     
     if (!name || !email || !phone || !zipcode) {
         alert('Please fill in all fields');
@@ -540,19 +543,8 @@ async function submitForm() {
         return;
     }
     
-    // Show loading state with Lord Icon
-    submitBtn.innerHTML = `
-        <div class="inline-flex items-center justify-center">
-            <lord-icon
-                src="https://cdn.lordicon.com/qwoehyvy.json"
-                trigger="loop"
-                state="hover-slide"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:24px;height:24px;margin-right:8px;">
-            </lord-icon>
-            Submitting...
-        </div>
-    `;
+    // Show loading state (simple version first)
+    submitBtn.innerHTML = 'Submitting...';
     submitBtn.disabled = true;
     submitBtn.className = 'w-full bg-gray-500 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
     
@@ -573,18 +565,17 @@ async function submitForm() {
             })
         });
         
+        console.log('Response status:', response.status);
+        
         if (response.ok) {
             // Show success state
-            submitBtn.innerHTML = '<div class="inline-flex items-center justify-center"><span class="text-2xl mr-2">✅</span>Submitted!</div>';
+            submitBtn.innerHTML = '✅ Submitted!';
             submitBtn.className = 'w-full bg-green-600 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
             
             // Show success message
             const successMessage = document.createElement('div');
-            successMessage.id = 'success-message';
             successMessage.className = 'mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center';
             successMessage.innerHTML = '<p class="font-semibold">We\'re excited to see you on the call!</p><p class="text-sm mt-1">Check your email for details on how to join.</p>';
-            
-            // Insert success message after the form
             submitBtn.parentNode.appendChild(successMessage);
             
             // Clear form
@@ -595,15 +586,15 @@ async function submitForm() {
             document.getElementById('consent').checked = false;
             
         } else {
-            // Show error state
+            console.error('Response not ok:', response.status);
             submitBtn.innerHTML = '❌ Error - Try Again';
-            submitBtn.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all transform hover:scale-105';
+            submitBtn.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all';
             submitBtn.disabled = false;
         }
     } catch (error) {
-        // Show error state
+        console.error('Fetch error:', error);
         submitBtn.innerHTML = '❌ Error - Try Again';
-        submitBtn.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all transform hover:scale-105';
+        submitBtn.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all';
         submitBtn.disabled = false;
     }
 }
