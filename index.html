@@ -529,8 +529,6 @@ async function submitForm(buttonElement) {
     const zipcode = document.getElementById('zipcode').value;
     const consent = document.getElementById('consent').checked;
     
-    console.log('Form submitted with:', { name, email, phone, zipcode, consent });
-    
     if (!name || !email || !phone || !zipcode) {
         alert('Please fill in all fields');
         return;
@@ -564,16 +562,38 @@ async function submitForm(buttonElement) {
         });
         
         if (response.ok) {
-            buttonElement.innerHTML = '✅ Submitted!';
+            // Show success state
+            buttonElement.innerHTML = 'Spot Reserved!';
             buttonElement.className = 'w-full bg-green-600 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
-            alert("We're excited to see you on the call! Check your email for details on how to join.");
+            
+            // Show clean success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'mt-6 p-6 bg-green-50 border-2 border-green-200 text-green-800 rounded-xl text-center';
+            successMessage.innerHTML = `
+                <div class="text-2xl mb-2">🎉</div>
+                <h3 class="text-lg font-bold mb-2">You're all set!</h3>
+                <p class="text-green-700">Check your email for webinar details and join instructions.</p>
+            `;
+            
+            // Insert success message after the button
+            buttonElement.parentNode.insertBefore(successMessage, buttonElement.nextSibling);
+            
+            // Clear form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('zipcode').value = '';
+            document.getElementById('consent').checked = false;
+            
         } else {
             buttonElement.innerHTML = '❌ Error - Try Again';
+            buttonElement.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all';
             buttonElement.disabled = false;
         }
     } catch (error) {
         console.error('Error:', error);
         buttonElement.innerHTML = '❌ Error - Try Again';
+        buttonElement.className = 'w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl transition-all';
         buttonElement.disabled = false;
     }
 }
