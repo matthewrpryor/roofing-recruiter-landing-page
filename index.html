@@ -529,13 +529,29 @@ async function submitForm(buttonElement) {
     const zipcode = document.getElementById('zipcode').value;
     const consent = document.getElementById('consent').checked;
     
+    // Remove any existing error messages
+    const existingError = document.getElementById('error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
     if (!name || !email || !phone || !zipcode) {
-        alert('Please fill in all fields');
+        // Show inline error message instead of alert
+        const errorMessage = document.createElement('div');
+        errorMessage.id = 'error-message';
+        errorMessage.className = 'mb-4 p-4 bg-red-50 border-2 border-red-200 text-red-800 rounded-xl text-center';
+        errorMessage.innerHTML = '<p class="font-semibold">Please fill in all fields</p>';
+        buttonElement.parentNode.insertBefore(errorMessage, buttonElement);
         return;
     }
     
     if (!consent) {
-        alert('Please agree to receive text messages to continue');
+        // Show inline error message instead of alert
+        const errorMessage = document.createElement('div');
+        errorMessage.id = 'error-message';
+        errorMessage.className = 'mb-4 p-4 bg-red-50 border-2 border-red-200 text-red-800 rounded-xl text-center';
+        errorMessage.innerHTML = '<p class="font-semibold">Please agree to receive text messages to continue</p>';
+        buttonElement.parentNode.insertBefore(errorMessage, buttonElement);
         return;
     }
     
@@ -563,7 +579,7 @@ async function submitForm(buttonElement) {
         
         if (response.ok) {
             // Show success state
-            buttonElement.innerHTML = 'Spot Reserved!';
+            buttonElement.innerHTML = '✅ Spot Reserved!';
             buttonElement.className = 'w-full bg-green-600 text-white font-bold py-3 sm:py-4 rounded-lg text-lg sm:text-xl cursor-not-allowed';
             
             // Show clean success message
